@@ -93,5 +93,21 @@ int main(){
 
 	userInput();
 
+	// Appetizer Input
+	if(budgetInput > 15){
+		if(meatInput < 10 && veggieInput < 10){
+			appetizer = "Garlic Bread\n";
+		}else if(meatInput > veggieInput){
+			appetizer = "Chicken Wings\n";
+		}else if(meatInput < veggieInput){
+			appetizer = "Garden Salad\n";
+		}
+	}else{
+		appetizer = "N/A";
+		appBool = false;
+	}
+
+	// Main Course Input
+
 	return 0;
 }
