@@ -96,11 +96,11 @@ int main(){
 	// Appetizer Input
 	if(budgetInput > 15){
 		if(meatInput < 10 && veggieInput < 10){
-			appetizer = "Garlic Bread\n";
+			appetizer = "Garlic Bread";
 		}else if(meatInput > veggieInput){
-			appetizer = "Chicken Wings\n";
+			appetizer = "Chicken Wings";
 		}else if(meatInput < veggieInput){
-			appetizer = "Garden Salad\n";
+			appetizer = "Garden Salad";
 		}
 	}else{
 		appetizer = "N/A";
@@ -110,20 +110,68 @@ int main(){
 	// Main Course Input
 	if(budgetInput > 10){
 		if(meatInput < 10 && potatoInput < 10 && pastaInput < 10 && veggieInput < 10){
-			mainCourse = "Cheese Omelet\n";
+			mainCourse = "Cheese Omelet";
 		}else if(meatInput > veggieInput){
 			if(potatoInput > pastaInput){
-				mainCourse = "Steak and Baked Potato\n";
+				mainCourse = "Steak and Baked Potato";
 			}else{
-				mainCourse = "Spaghetti and Meat Sauce\n";
+				mainCourse = "Spaghetti and Meat Sauce";
 			}
 		}else if(meatInput < veggieInput){
-			mainCourse = "Pasta Primavera\n";
+			mainCourse = "Pasta Primavera";
 		}
 	}else{
 		mainCourse = "N/A";
 		mainCourseBool = false;
 	}	
+
+	// Dessert Input
+	if(budgetInput > 20){
+		if(chocolateInput < 10 && fruitInput < 10){
+			dessert = "Vanilla Ice Cream";
+		}else if(chocolateInput > fruitInput){
+			dessert = "Chocolate Cake";
+		}else if(chocolateInput < fruitInput){
+			dessert = "Apple Pie";
+		}
+	}else{
+		dessert = "N/A";
+		dessertBool = false;
+	}
+
+	// Telling the customer what their order will be and how much each item is
+	cout << "Your appetizer will be: " << appetizer << " and it will cost $";
+	if(appBool){
+		cout << appPrice << endl;
+	}else{
+		appPrice = 0;
+		cout << appPrice << endl;
+	}
+
+	cout << "Your main course will be: " << mainCourse << " and it will cost $";
+	if(mainCourseBool){
+		cout << mainCoursePrice << endl;
+	}else{
+		mainCoursePrice = 0;
+		cout << mainCoursePrice << endl;
+	}
+
+	cout << "Your dessert will be: " << dessert << " and it will cost $";
+	if(dessertBool){
+		cout << dessertPrice << endl;
+	}else{
+		dessertPrice = 0;
+		cout << dessertPrice << endl;
+	}
+
+	float subtotal = appPrice + mainCoursePrice + dessertPrice;
+	float tax      = subtotal * 0.07;
+	float bill     = subtotal + tax;
+
+	cout << "Your bill for this meal is..." 	<< endl;
+	cout << "Meal: $" 	<< subtotal 		<< endl;
+	cout << "Tax: $" 	<< tax	 		<< endl;
+	cout << "Total: $" 	<< bill 		<< endl;
 
 	return 0;
 }
