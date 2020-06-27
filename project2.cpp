@@ -108,6 +108,22 @@ int main(){
 	}
 
 	// Main Course Input
+	if(budgetInput > 10){
+		if(meatInput < 10 && potatoInput < 10 && pastaInput < 10 && veggieInput < 10){
+			mainCourse = "Cheese Omelet\n";
+		}else if(meatInput > veggieInput){
+			if(potatoInput > pastaInput){
+				mainCourse = "Steak and Baked Potato\n";
+			}else{
+				mainCourse = "Spaghetti and Meat Sauce\n";
+			}
+		}else if(meatInput < veggieInput){
+			mainCourse = "Pasta Primavera\n";
+		}
+	}else{
+		mainCourse = "N/A";
+		mainCourseBool = false;
+	}	
 
 	return 0;
 }
