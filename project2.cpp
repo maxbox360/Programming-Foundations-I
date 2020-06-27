@@ -57,10 +57,41 @@ void userInput(){
 		cout << "How much do you enjoy chocolate on a scale of 1 to 100?\n";
 		cin >> chocolateInput;
 	}
+
+	// Fruit Input
+	cout << "How much do you enjoy fruit on a scale of 1 to 100?\n";
+	cin >> fruitInput;
+	while(fruitInput < 1 || fruitInput > 100){
+		cout << "My apologies that is an invalid response.\n";
+		cout << "How much do you enjoy fruit on a scale of 1 to 100?\n";
+		cin >> fruitInput;
+	}
+
+	cout << "What is your budget for the evening?\n";
+	cin >> budgetInput;
+	
+	cout << "Very good. We will make this information and bring out your most optimized meal!\n";
 }
 
 
 int main(){
+
+	// Variables to store answers and check which items to serve
+	string appetizer, mainCourse, dessert = " ";
+	bool appBool 		= true;
+	bool mainCourseBool     = true;
+	bool dessertBool        = true;
+	int appPrice        =  5;
+	int mainCoursePrice = 10;
+	int dessertPrice    =  5;
+
+	// Welcome!
+	cout << "Welcome to Max's Restaurant!" 				<< endl;
+	cout << "Here the chef will make a surprise meal for you";
+	cout << "based on your answers to the questions below!" 	<< endl;
+	cout << "Enjoy your meal!" 					<< endl;
+
+	userInput();
 
 	return 0;
 }
