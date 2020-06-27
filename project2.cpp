@@ -104,7 +104,7 @@ int main(){
 		}
 	}else{
 		appetizer = "N/A";
-		appBool = false;
+		appBool   = false;
 	}
 
 	// Main Course Input
@@ -121,7 +121,7 @@ int main(){
 			mainCourse = "Pasta Primavera";
 		}
 	}else{
-		mainCourse = "N/A";
+		mainCourse     = "N/A";
 		mainCourseBool = false;
 	}	
 
@@ -135,7 +135,7 @@ int main(){
 			dessert = "Apple Pie";
 		}
 	}else{
-		dessert = "N/A";
+		dessert	    = "N/A";
 		dessertBool = false;
 	}
 
@@ -168,10 +168,10 @@ int main(){
 	float tax      = subtotal * 0.07;
 	float bill     = subtotal + tax;
 
-	cout << "Your bill for this meal is..." 	<< endl;
-	cout << "Meal: $" 	<< subtotal 		<< endl;
-	cout << "Tax: $" 	<< tax	 		<< endl;
-	cout << "Total: $" 	<< bill 		<< endl;
+	cout << "Your bill for this meal is..."		 			<< endl;
+	cout << "Meal: $" 				<< subtotal 		<< endl;
+	cout << "Tax: $"   << fixed << setprecision(2)	<< tax	 		<< endl;
+	cout << "Total: $" << fixed << setprecision(2) 	<< bill 		<< endl;
 
 	return 0;
 }
